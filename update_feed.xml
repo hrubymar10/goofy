@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
-        <title>Goofy Changelog</title>
+        <title>Goofy_Swift Changelog</title>
         <link>https://raw.githubusercontent.com/hrubymar10/goofy_swift/master/update_feed.xml</link>
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 2.2.6</title>
+            <title>Version 4.0</title>
             <sparkle:releaseNotesLink>
-                http://www.goofyapp.com/version/2.2.html
+                https://hrubymar10.github.io/goofy_swift/versions/4.0.html
             </sparkle:releaseNotesLink>
-            <pubDate>Sat, 09 Jul 2016 11:20:11 +0000</pubDate>
+            <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
             <link>http://www.goofyapp.com/version/2.2.html</link>
             <enclosure url="https://github.com/danielbuechele/goofy/releases/download/v2.2.6/Goofy.app.zip"
                 sparkle:version="973"
