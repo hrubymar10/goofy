@@ -1,6 +1,6 @@
 //
 //  MenuHandler.swift
-//  Goofy
+//  GoofySwift
 //
 //  Created by Daniel Büchele on 09/04/15.
 //  Copyright (c) 2015 Daniel Büchele. All rights reserved.
@@ -130,7 +130,7 @@ class MenuHandler: NSObject {
     // MARK: "Report Issue" Button
 
     @IBAction func reportIssue(_ sender: NSMenuItem) {
-        let reportIssueURL = URL(string: "https://github.com/danielbuechele/goofy/issues/new")
+        let reportIssueURL = URL(string: "https://github.com/hrubymar10/goofy_swift/issues/new")
         NSWorkspace.shared.open(reportIssueURL!)
     }
 

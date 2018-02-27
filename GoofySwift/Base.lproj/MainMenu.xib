@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14101" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14101"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,18 +33,18 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="GAI-1a-fMQ" customClass="SUUpdater"/>
         <customObject id="XE1-by-mZK" customClass="MenuHandler" customModule="Goofy"/>
-        <customObject id="qLh-Hp-pnN" customClass="TitleLabel" customModule="Goofy" customModuleProvider="target">
+        <customObject id="qLh-Hp-pnN" customClass="TitleLabel" customModule="GoofySwift" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="K2v-PI-Lwx" id="PrV-sl-rgb"/>
             </connections>
         </customObject>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="Goofy" id="1Xt-HY-uBw">
+                <menuItem title="GoofySwift" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Goofy" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="GoofySwift" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About Goofy" id="5kV-Vb-QxS">
+                            <menuItem title="About GoofySwift" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -73,7 +74,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide Goofy" keyEquivalent="h" id="Olw-nP-bQN">
+                            <menuItem title="Hide GoofySwift" keyEquivalent="h" id="Olw-nP-bQN">
                                 <connections>
                                     <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
                                 </connections>
@@ -91,7 +92,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit Goofy" keyEquivalent="q" id="4sb-4s-VLi">
+                            <menuItem title="Quit GoofySwift" keyEquivalent="q" id="4sb-4s-VLi">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
                                 </connections>
@@ -420,7 +421,7 @@
                                     <action selector="reportIssue:" target="XE1-by-mZK" id="tCC-jz-oar"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Goofy Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                            <menuItem title="GoofySwift Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
                                 </connections>
@@ -430,12 +431,12 @@
                 </menuItem>
             </items>
         </menu>
-        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="Goofy" animationBehavior="default" id="sOM-gr-fGx">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="GoofySwift" animationBehavior="default" id="sOM-gr-fGx">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="706" height="467"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <view key="contentView" wantsLayer="YES" id="5iU-zi-Msx">
                 <rect key="frame" x="0.0" y="0.0" width="706" height="467"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -447,7 +448,7 @@
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" alphaValue="0.5" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Ac9-Ec-QfU">
                         <rect key="frame" x="337" y="35" width="32" height="32"/>
                     </progressIndicator>
-                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8q9-2T-qDe">
+                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8q9-2T-qDe">
                         <rect key="frame" x="18" y="10" width="670" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="It is taking unusually long to load the application. Try hitting ⌘+R..." id="Sl8-4D-drH">
                             <font key="font" metaFont="system"/>
@@ -533,7 +534,7 @@
                         <action selector="toggleStatusItem:" target="Voe-Tx-rLC" id="vfT-C1-FWD"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Quit Goofy" id="WLN-KV-h7d">
+                <menuItem title="Quit GoofySwift" id="WLN-KV-h7d">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="terminate:" target="-1" id="DYx-6T-idD"/>

@@ -33,11 +33,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3327A60A1AD16DF500B71853 /* Goofy-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Goofy-Bridging-Header.h"; sourceTree = "<group>"; };
+		3327A60A1AD16DF500B71853 /* GoofySwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GoofySwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		3327A60B1AD16E7400B71853 /* WKPreferences+DevExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKPreferences+DevExtras.h"; sourceTree = "<group>"; };
 		3327A60C1AD16EA100B71853 /* WKPreferences+DevExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKPreferences+DevExtras.m"; sourceTree = "<group>"; };
 		338FDBB51AD91FAD00164747 /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
-		33942F971A2AE7F700E6D361 /* Goofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33942F971A2AE7F700E6D361 /* GoofySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoofySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33942F9B1A2AE7F700E6D361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33942F9C1A2AE7F700E6D361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33942F9E1A2AE7F700E6D361 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -67,9 +67,9 @@
 			children = (
 				3327A60B1AD16E7400B71853 /* WKPreferences+DevExtras.h */,
 				3327A60C1AD16EA100B71853 /* WKPreferences+DevExtras.m */,
-				3327A60A1AD16DF500B71853 /* Goofy-Bridging-Header.h */,
+				3327A60A1AD16DF500B71853 /* GoofySwift-Bridging-Header.h */,
 				33942FB71A2AE8AA00E6D361 /* WebKit.framework */,
-				33942F991A2AE7F700E6D361 /* Goofy */,
+				33942F991A2AE7F700E6D361 /* GoofySwift */,
 				33942F981A2AE7F700E6D361 /* Products */,
 				DF75007D11E0E9DB18327EF8 /* Frameworks */,
 				9D9D53001C35B0C400A7DCB6 /* GoofyTests-Bridging-Header.h */,
@@ -79,12 +79,12 @@
 		33942F981A2AE7F700E6D361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33942F971A2AE7F700E6D361 /* Goofy.app */,
+				33942F971A2AE7F700E6D361 /* GoofySwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		33942F991A2AE7F700E6D361 /* Goofy */ = {
+		33942F991A2AE7F700E6D361 /* GoofySwift */ = {
 			isa = PBXGroup;
 			children = (
 				33942F9C1A2AE7F700E6D361 /* AppDelegate.swift */,
@@ -95,7 +95,7 @@
 				33942FA01A2AE7F700E6D361 /* MainMenu.xib */,
 				33942F9A1A2AE7F700E6D361 /* Supporting Files */,
 			);
-			path = Goofy;
+			path = GoofySwift;
 			sourceTree = "<group>";
 		};
 		33942F9A1A2AE7F700E6D361 /* Supporting Files */ = {
@@ -117,9 +117,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		33942F961A2AE7F700E6D361 /* Goofy */ = {
+		33942F961A2AE7F700E6D361 /* GoofySwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33942FB11A2AE7F700E6D361 /* Build configuration list for PBXNativeTarget "Goofy" */;
+			buildConfigurationList = 33942FB11A2AE7F700E6D361 /* Build configuration list for PBXNativeTarget "GoofySwift" */;
 			buildPhases = (
 				33942F931A2AE7F700E6D361 /* Sources */,
 				33942F941A2AE7F700E6D361 /* Frameworks */,
@@ -134,9 +134,9 @@
 			);
 			dependencies = (
 			);
-			name = Goofy;
+			name = GoofySwift;
 			productName = Goofy;
-			productReference = 33942F971A2AE7F700E6D361 /* Goofy.app */;
+			productReference = 33942F971A2AE7F700E6D361 /* GoofySwift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +160,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 33942F921A2AE7F700E6D361 /* Build configuration list for PBXProject "Goofy" */;
+			buildConfigurationList = 33942F921A2AE7F700E6D361 /* Build configuration list for PBXProject "GoofySwift" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -173,7 +173,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				33942F961A2AE7F700E6D361 /* Goofy */,
+				33942F961A2AE7F700E6D361 /* GoofySwift */,
 			);
 		};
 /* End PBXProject section */
@@ -218,7 +218,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"Mac Developer\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
+			shellScript = "#LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\n#IDENTITY=\"Mac Developer\"\n#codesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
 		};
 		9D9D53031C35B31800A7DCB6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -364,28 +364,23 @@
 		33942FB21A2AE7F700E6D361 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Goofy/Info.plist;
+				INFOPLIST_FILE = GoofySwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.buechele.Goofy;
+				PRODUCT_BUNDLE_IDENTIFIER = cs.hrubymar10.GoofySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROJECT_DIR = "$(SRCROOT)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Goofy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoofySwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -393,23 +388,22 @@
 		33942FB31A2AE7F700E6D361 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Goofy/Info.plist;
+				INFOPLIST_FILE = GoofySwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				OTHER_SWIFT_FLAGS = "-DRELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.buechele.Goofy;
+				PRODUCT_BUNDLE_IDENTIFIER = cs.hrubymar10.GoofySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROJECT_DIR = "$(SRCROOT)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Goofy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoofySwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -417,7 +411,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33942F921A2AE7F700E6D361 /* Build configuration list for PBXProject "Goofy" */ = {
+		33942F921A2AE7F700E6D361 /* Build configuration list for PBXProject "GoofySwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33942FAF1A2AE7F700E6D361 /* Debug */,
@@ -426,7 +420,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		33942FB11A2AE7F700E6D361 /* Build configuration list for PBXNativeTarget "Goofy" */ = {
+		33942FB11A2AE7F700E6D361 /* Build configuration list for PBXNativeTarget "GoofySwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33942FB21A2AE7F700E6D361 /* Debug */,
