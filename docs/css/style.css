@@ -1,0 +1,195 @@
+@font-face {
+  font-family: 'entypo';
+  src: url('../font/entypo.eot');
+  src: url('../font/entypo.eot?#iefix') format('embedded-opentype'),
+       url('../font/entypo.woff') format('woff'),
+       url('../font/entypo.ttf')  format('truetype'),
+       url('../font/entypo.svg#entypo') format('svg');
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    padding-bottom: 80px;
+    color: #232323;
+}
+
+header {
+    text-align: center;
+    background: #fff;
+    padding: 30px 0 0;
+    background-size: 188px 480px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 767px) {
+    header {
+        padding-top: 30px;
+    }
+}
+
+a, a:visited {
+		font-weight: 400;
+    color: #0084FF;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: none;
+    color: #25BCFA;
+}
+
+h1 {
+    font-family: "futura-pt";
+    font-size: 60px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 0;
+    padding-top: 50px;
+}
+
+h2, h3 {
+    font-family: "futura-pt";
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+h2 {
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-weight: 400;
+    margin-bottom: 14px;
+    color: #232323;
+}
+
+p {
+	color: #707070;
+}
+
+.features {
+	color: #707070;
+	line-height: 1.6;
+}
+
+.container {
+    max-width: 700px;
+}
+
+.center {
+    text-align: center;
+}
+
+.screenshot {
+    margin: 80px auto;
+    padding-top: 40px;
+    background-color: #0084FF;
+    text-align: center;
+    color: #fff;
+}
+
+.screenshot p {
+    color: #fff;
+}
+
+.screenshot img {
+    max-width: 100%;
+}
+
+.next-row {
+    margin-top: 50px;
+
+}
+@media (max-width: 767px) {
+    .col-sm-6:nth-child(2) {
+        margin-top: 50px;
+    }
+}
+
+.fbatwork {
+  margin-bottom: 60px;
+  margin-top: 80px;
+}
+
+.questions {
+		background: #F7FAFC;
+		text-align: center;
+		padding-top: 30px;
+		padding-bottom: 30px;
+}
+
+code {
+    color: black;
+    background: transparent;
+}
+
+.btn, .btn:visited {
+		background: #0084FF;
+    font-family: "futura-pt";
+    text-transform: uppercase;
+    margin-top: 20px;
+    vertical-align: middle;
+    padding: 14px 55px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.btn:hover {
+	color: #fff;
+	background: #2094FF;
+}
+
+.btn:active, .btn:focus {
+	color: #fff;
+	background: #0078E7;
+	box-shadow: none;
+}
+
+@media (max-width: 767px) {
+    .btn {
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .appstore {
+        margin-left: 0;
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+
+.contact {
+    max-width: 500px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile {
+    width: 64px;
+    border-radius: 999em;
+    margin-bottom: 10px;
+}
+
+.foxes {
+    width: 120px;
+    margin: auto;
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.sosumi {
+    margin-left: -13px;
+}
