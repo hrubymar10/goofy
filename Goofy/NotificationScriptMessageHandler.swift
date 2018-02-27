@@ -18,7 +18,7 @@ class NotificationScriptMessageHandler: NSObject, WKScriptMessageHandler, NSUser
         
         let bodyValue = message.body as? NSDictionary
         let type = bodyValue?["type"] as! String
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate;
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate;
         
         switch type {
             case "NOT_LOGGED_IN":
@@ -55,13 +55,13 @@ class NotificationScriptMessageHandler: NSObject, WKScriptMessageHandler, NSUser
     // MARK: - Dock Badge counter, Status Item state
 
     func dockCount(_ count: String) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate;
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate;
 
         if (count == "0") {
-            NSApplication.shared().dockTile.badgeLabel = ""
+            NSApplication.shared.dockTile.badgeLabel = ""
             appDelegate.changeStatusItemImage("StatusItem")
         } else {
-            NSApplication.shared().dockTile.badgeLabel = count
+            NSApplication.shared.dockTile.badgeLabel = count
             appDelegate.changeStatusItemImage("StatusItemUnread")
         }
     }
@@ -87,7 +87,7 @@ class NotificationScriptMessageHandler: NSObject, WKScriptMessageHandler, NSUser
     }
 
     func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate;
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate;
         let id = notification.userInfo!["id"] as! String
         if (notification.activationType == NSUserNotification.ActivationType.replied){
             let userResponse = notification.response?.string.replacingOccurrences(of: "\n", with: "\\n");
@@ -112,12 +112,12 @@ class NotificationScriptMessageHandler: NSObject, WKScriptMessageHandler, NSUser
         let roundedImage = NSImage(size: newSize)
         
         roundedImage.lockFocus()
-        let ctx = NSGraphicsContext.current()
+        let ctx = NSGraphicsContext.current
         ctx?.imageInterpolation = NSImageInterpolation.high
         
         let imageFrame = NSRect(x: 0, y: 0, width: width, height: height)
         let clipPath = NSBezierPath(roundedRect: imageFrame, xRadius: xRad, yRadius: yRad)
-        clipPath.windingRule = NSWindingRule.evenOddWindingRule
+        clipPath.windingRule = NSBezierPath.WindingRule.evenOddWindingRule
         clipPath.addClip()
         
         let rect = NSRect(x: 0, y: 0, width: newSize.width, height: newSize.height)

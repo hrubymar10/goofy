@@ -55,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
 
 		// Create Webview
         webView = createWebview(createContentController())
-        view.addSubview(webView, positioned: NSWindowOrderingMode.below, relativeTo: view);
+        view.addSubview(webView, positioned: NSWindow.OrderingMode.below, relativeTo: view);
 
 		// Load URL
         let url : String = "https://messenger.com/login"
@@ -64,9 +64,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     }
 
     func applicationDidBecomeActive(_ aNotification: Notification) {
-        NSApplication.shared().dockTile.badgeLabel = ""
+        NSApplication.shared.dockTile.badgeLabel = ""
         if (self.activatedFromBackground) {
-            if (self.reactivationMenuItem.state == 1) {
+            if (self.reactivationMenuItem.state.rawValue == 1) {
                 webView.evaluateJavaScript("reactivation()", completionHandler: nil)
             }
 
@@ -104,7 +104,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
             let url = navigationAction.request.url!
             if url.description.lowercased().range(of: "http://") != nil || url.description.lowercased().range(of: "https://") != nil || url.description.lowercased().range(of: "mailto:") != nil  {
 
-                NSWorkspace.shared().open(url)
+                NSWorkspace.shared.open(url)
             }
         }
         return nil
@@ -134,17 +134,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
 
 
                             // Take the result, pull it out of our string, and decode the url string
-                            let referenceString = nsString.substring(with: results!.rangeAt(2)).removingPercentEncoding!
+                            let referenceString = nsString.substring(with: results!.range(at: 2)).removingPercentEncoding!
 
                             // Open it up as a normal url
-                            NSWorkspace.shared().open(URL(string: referenceString)!)
+                            NSWorkspace.shared.open(URL(string: referenceString)!)
                             decisionHandler(.cancel)
                         } catch {
-                            NSWorkspace.shared().open(url)
+                            NSWorkspace.shared.open(url)
                             decisionHandler(.cancel)
                         }
                     } else {
-                        NSWorkspace.shared().open(url)
+                        NSWorkspace.shared.open(url)
                         decisionHandler(.cancel)
                     }
                 }
@@ -164,7 +164,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
         wv.configuration.preferences.setValue(true, forKey: "developerExtrasEnabled")
         wv.navigationDelegate = self
         wv.uiDelegate = self
-        wv.autoresizingMask = [NSAutoresizingMaskOptions.viewWidthSizable, NSAutoresizingMaskOptions.viewHeightSizable]
+        wv.autoresizingMask = [NSView.AutoresizingMask.width, NSView.AutoresizingMask.height]
 
         return wv
     }
@@ -223,7 +223,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
         for item in toolbar.items {
             let i = item 
             i.view?.isHidden = false
-            i.image = NSImage(named: i.label)
+            i.image = NSImage(named: NSImage.Name(rawValue: i.label))
         }
         sizeWindow(window)
     }
@@ -232,7 +232,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
         for item in toolbar.items {
             let i = item 
             i.view?.isHidden = true
-            i.image = NSImage(named: "White")
+            i.image = NSImage(named: NSImage.Name(rawValue: "White"))
         }
     }
 
@@ -258,7 +258,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
 
         let reactivationToggle : Bool? = UserDefaults.standard.object(forKey: "reactivationToggle") as? Bool
         if (reactivationToggle != nil && reactivationToggle==true) {
-            self.reactivationMenuItem.state = 1
+            self.reactivationMenuItem.state = NSControl.StateValue(rawValue: 1)
         }
 
         let userScript = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
@@ -289,7 +289,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
         hideMenuBar()
     }
 
-    func endLoading() {
+    @objc func endLoading() {
         timer.invalidate()
         loadingView?.isHidden = true
         spinner.stopAnimation(self)
@@ -299,7 +299,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
         sizeWindow(window)
     }
 
-    func longLoadingMessage() {
+    @objc func longLoadingMessage() {
         if (loadingView?.isHidden == false) {
             longLoading.isHidden = false
         }
@@ -309,17 +309,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     // MARK: - Dock Icon
 
     func changeDockIcon() {
-        NSApplication.shared().applicationIconImage = NSImage(named: "Image")
+        NSApplication.shared.applicationIconImage = NSImage(named: NSImage.Name(rawValue: "Image"))
     }
 
 
     // MARK: - Status Item
 
-    func statusBarItemClicked() {
+    @objc func statusBarItemClicked() {
         webView.evaluateJavaScript("reactivation()", completionHandler: nil);
         
         let currentEvent    = NSApp.currentEvent!
-        let isRightClicked  = (currentEvent.type == NSEventType.rightMouseUp) ? true : false
+        let isRightClicked  = (currentEvent.type == NSEvent.EventType.rightMouseUp) ? true : false
         
         if isRightClicked {
             // Set up the statusMenu and show it.
@@ -338,19 +338,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     }
 
     func addStatusItem() {
-        statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         
         
         if let button = statusItem.button {
 			changeStatusItemImage("StatusItem")
             NSApp.setActivationPolicy(.accessory) // Hide dock icon and menu bar
             button.action = #selector(self.statusBarItemClicked)
-            button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+            button.sendAction(on: [NSEvent.EventTypeMask.leftMouseUp, NSEvent.EventTypeMask.rightMouseUp])
         }
     }
 
     func hideStatusItem() {
-    	NSStatusBar.system().removeStatusItem(statusItem)
+    	NSStatusBar.system.removeStatusItem(statusItem)
         NSApp.setActivationPolicy(.regular)
         
         if !window.isVisible {
@@ -362,7 +362,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
 
     func changeStatusItemImage(_ newImage: String) {
         if let button = statusItem.button {
-            let image = NSImage(named: newImage)
+            let image = NSImage(named: NSImage.Name(rawValue: newImage))
             image!.isTemplate = true
             button.image = image
         }
@@ -410,11 +410,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     @IBAction func toggleReactivation(_ sender: AnyObject) {
         let i : NSMenuItem = sender as! NSMenuItem
 
-        if (i.state == 0) {
-            i.state = NSOnState
+        if (i.state.rawValue == 0) {
+            i.state = NSControl.StateValue.on
             UserDefaults.standard.set(true, forKey: "reactivationToggle")
         } else {
-            i.state = NSOffState
+            i.state = NSControl.StateValue.off
             UserDefaults.standard.set(false, forKey: "reactivationToggle")
         }
         UserDefaults.standard.synchronize()

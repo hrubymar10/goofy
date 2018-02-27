@@ -68,7 +68,7 @@ class TitleLabel: NSViewController {
     func windowDidResize() {
         
         var toolbarItem : NSToolbarItem!
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate;
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate;
         for item in appDelegate.toolbar.items {
             let i = item 
             if i.view == self.view {

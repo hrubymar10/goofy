@@ -15,14 +15,14 @@ class MenuHandler: NSObject {
 	// MARK: Preferences
 
     @IBAction func preferences(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.webView.evaluateJavaScript("preferences()", completionHandler: nil);
     }
 
     // MARK: Logout
 
     @IBAction func logout(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.webView.evaluateJavaScript("logout()", completionHandler: nil);
         appDelegate.hideMenuBar()
     }
@@ -30,7 +30,7 @@ class MenuHandler: NSObject {
 	// MARK: Clipboard: Paste
 
     @IBAction func handlePaste(_ sender: NSMenuItem) {
-        let pasteboard = NSPasteboard.general()
+        let pasteboard = NSPasteboard.general
 
         let classArray : Array<AnyClass> = [NSImage.self]
         let canReadData = pasteboard.canReadObject(forClasses: classArray, options: nil)
@@ -55,7 +55,7 @@ class MenuHandler: NSObject {
         openPanel.canChooseFiles = true
         openPanel.allowedFileTypes = ["png","jpg","jpeg","gif"]
         openPanel.begin { (result) -> Void in
-            if result == NSFileHandlingPanelOKButton {
+            if result.rawValue == NSFileHandlingPanelOKButton {
                 let image = NSImage(contentsOf: openPanel.url!);
                 self.uploadimage(image!)
             }
@@ -63,11 +63,11 @@ class MenuHandler: NSObject {
     }
 
     func uploadimage(_ image: NSImage) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         image.lockFocus();
         let bitmapRep = NSBitmapImageRep(focusedViewRect: NSMakeRect(0, 0, image.size.width, image.size.height));
         image.unlockFocus();
-        let imageData = bitmapRep?.representation(using: NSBitmapImageFileType.PNG, properties: [:]);
+        let imageData = bitmapRep?.representation(using: NSBitmapImageRep.FileType.png, properties: [:]);
         let base64String = imageData?.base64EncodedString(options: NSData.Base64EncodingOptions.endLineWithLineFeed);
         //println(base64String!)
         appDelegate.webView.evaluateJavaScript("pasteImage('\(base64String!)')", completionHandler: nil);
@@ -76,43 +76,43 @@ class MenuHandler: NSObject {
     // MARK: Search
 
     @IBAction func search(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.webView.evaluateJavaScript("search()", completionHandler: nil);
     }
 
     // MARK: Conversation Navigation
 
     @IBAction func newConversation(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.webView.evaluateJavaScript("newConversation()", completionHandler: nil);
     }
     
     @IBAction func gotoConversation(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.webView.evaluateJavaScript("gotoConversation("+String(sender.tag)+")", completionHandler: nil);
     }
     
     @IBAction func gotoConversationAtIndex(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.webView.evaluateJavaScript("gotoConversationAtIndex("+String(sender.tag)+")", completionHandler: nil);
     }
 
     @IBAction func plus(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.webView.evaluateJavaScript("plus()", completionHandler: nil);
     }
 
 	// MARK: Fullscreen
     
     @IBAction func fullscreen(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.window.toggleFullScreen(self)
     }
 
     // MARK: Reload
 
     @IBAction func reload(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.startLoading()
         appDelegate.webView.reload()
     }
@@ -123,7 +123,7 @@ class MenuHandler: NSObject {
     // MARK: "Information" Button
 
     @IBAction func info(_ sender: AnyObject) {
-        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.webView.evaluateJavaScript("info()", completionHandler: nil);
     }
 
@@ -131,7 +131,7 @@ class MenuHandler: NSObject {
 
     @IBAction func reportIssue(_ sender: NSMenuItem) {
         let reportIssueURL = URL(string: "https://github.com/danielbuechele/goofy/issues/new")
-        NSWorkspace.shared().open(reportIssueURL!)
+        NSWorkspace.shared.open(reportIssueURL!)
     }
 
 }
