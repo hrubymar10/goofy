@@ -46,7 +46,6 @@
 		33A2E96F1B6E40D90079CB65 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		33B93A6A1AD68BE2003EBDDE /* MenuHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
 		33C741DF1A2B02840072D81E /* NotificationScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationScriptMessageHandler.swift; sourceTree = "<group>"; };
-		9D9D53001C35B0C400A7DCB6 /* GoofyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GoofyTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +71,6 @@
 				33942F991A2AE7F700E6D361 /* GoofySwift */,
 				33942F981A2AE7F700E6D361 /* Products */,
 				DF75007D11E0E9DB18327EF8 /* Frameworks */,
-				9D9D53001C35B0C400A7DCB6 /* GoofyTests-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,7 +133,7 @@
 			dependencies = (
 			);
 			name = GoofySwift;
-			productName = Goofy;
+			productName = GoofySwift;
 			productReference = 33942F971A2AE7F700E6D361 /* GoofySwift.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -380,6 +378,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROJECT_DIR = "$(SRCROOT)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoofySwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
@@ -403,6 +402,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROJECT_DIR = "$(SRCROOT)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoofySwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};

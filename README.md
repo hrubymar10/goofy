@@ -17,4 +17,4 @@ npm install
 gulp
 ```
 
-You can modify Goofy's `Info.plist` and enter a string value for `GoofyJavaScriptURL` to load the JavaScript from a different URL.
+You can modify GoofySwift's `Info.plist` and enter a string value for `GoofyJavaScriptURL` to load the JavaScript from a different URL.
