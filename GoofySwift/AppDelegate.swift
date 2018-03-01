@@ -248,7 +248,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
             let source = (try! String(contentsOfFile: path+"/server/dist/fb.js", encoding: String.Encoding.utf8))+"init();"
         #else
             let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-            var jsurl = "https://dani.taurus.uberspace.de/goofyapp/fb" + version + ".js"
+            var jsurl = "https://hrubymar10.github.io/goofy_swift/js/fb" + version + ".js"
             if (Bundle.main.object(forInfoDictionaryKey: "GoofyJavaScriptURL") != nil) {
                 jsurl = Bundle.main.object(forInfoDictionaryKey: "GoofyJavaScriptURL") as! String
             }
