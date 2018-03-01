@@ -1,10 +1,9 @@
-html {
+._1ht6, ._1htf, html {
     overflow: hidden;
 }
 
 body, button, input, label, select, td, textarea {
-    font-family: system, -apple-system, BlinkMacSystemFont,
-                 "Helvetica Neue", "Lucida Grande" !important;
+    font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande" !important;
 }
 
 /* weird display of input bar above messages, fixes #148*/
@@ -29,7 +28,7 @@ body, button, input, label, select, td, textarea {
 }
 
 @media all and (max-width: 800px) {
-    ._1ht5 ._1qt4, .safari.webkit ._1ht5 ._1qt4, .ie10 ._1ht5 ._1qt4 {
+    ._1ht5 ._1qt4, .ie10 ._1ht5 ._1qt4, .safari.webkit ._1ht5 ._1qt4 {
         display: -webkit-box;
     }
     ._3rh8 {
