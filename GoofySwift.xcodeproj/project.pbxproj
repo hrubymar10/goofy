@@ -17,6 +17,7 @@
 		33A2E9721B6E41990079CB65 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 33A2E96F1B6E40D90079CB65 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33B93A6B1AD68BE2003EBDDE /* MenuHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B93A6A1AD68BE2003EBDDE /* MenuHandler.swift */; };
 		33C741E01A2B02840072D81E /* NotificationScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C741DF1A2B02840072D81E /* NotificationScriptMessageHandler.swift */; };
+		460340C1204891EF00CF147C /* GoofySwift_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 460340BF204891C900CF147C /* GoofySwift_pub.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,7 @@
 		33A2E96F1B6E40D90079CB65 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		33B93A6A1AD68BE2003EBDDE /* MenuHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
 		33C741DF1A2B02840072D81E /* NotificationScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationScriptMessageHandler.swift; sourceTree = "<group>"; };
+		460340BF204891C900CF147C /* GoofySwift_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoofySwift_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				33942F9B1A2AE7F700E6D361 /* Info.plist */,
+				460340BF204891C900CF147C /* GoofySwift_pub.pem */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460340C1204891EF00CF147C /* GoofySwift_pub.pem in Resources */,
 				3327A60D1AD16EA100B71853 /* WKPreferences+DevExtras.m in Resources */,
 				33942F9F1A2AE7F700E6D361 /* Images.xcassets in Resources */,
 				33942FA21A2AE7F700E6D361 /* MainMenu.xib in Resources */,

@@ -6,16 +6,17 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 4.1</title>
+            <title>Version 4.2</title>
             <sparkle:releaseNotesLink>
-                https://hrubymar10.github.io/goofy_swift/versions/4.1.html
+                https://hrubymar10.github.io/goofy_swift/versions/4.2.html
             </sparkle:releaseNotesLink>
-            <pubDate>Wed, 01 Mar 2018 19:00:00 +0000</pubDate>
-            <link>https://hrubymar10.github.io/goofy_swift/versions/4.1.html</link>
-            <enclosure url="https://github.com/hrubymar10/goofy_swift/releases/download/v4.1/GoofySwift_v4.1.app.zip"
-                sparkle:version="1157"
-                sparkle:shortVersionString="4.1"
-                length="9653672"
+            <pubDate>Wed, 01 Mar 2018 20:00:00 +0000</pubDate>
+            <link>https://hrubymar10.github.io/goofy_swift/versions/4.2.html</link>
+            <enclosure url="https://github.com/hrubymar10/goofy_swift/releases/download/v4.2/GoofySwift_v4.2.app.zip"
+                sparkle:version="1162"
+                sparkle:shortVersionString="4.2"
+                sparkle:dsaSignature="Gs44XE+8KUmi1bPnLKD38ucuHsXQpg=="
+                length="7617054"
                 type="application/octet-stream" />
         </item>
     </channel>

@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>4.1</string>
+	<string>4.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1158</string>
+	<string>1163</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.social-networking</string>
 	<key>LSMinimumSystemVersion</key>
@@ -43,6 +43,8 @@
 	<true/>
 	<key>SUFeedURL</key>
 	<string>https://raw.githubusercontent.com/hrubymar10/goofy_swift/master/update_feed.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>GoofySwift_pub.pem</string>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
 </dict>
