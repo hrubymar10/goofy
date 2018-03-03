@@ -29,7 +29,7 @@ class TitleLabel: NSViewController {
         activeLabel?.drawsBackground = false
         activeLabel?.alignment = .center
         activeLabel?.font = NSFont.systemFont(ofSize: 10.0)
-        switch appDelegate.defaults.string(forKey: "theme") {
+        switch appDelegate.getTheme() {
         case "default":
             activeLabel?.textColor = NSColor.gray
         case "dark":
@@ -48,7 +48,7 @@ class TitleLabel: NSViewController {
         titleLabel?.alignment = .center
         titleLabel?.textColor = NSColor.black
         titleLabel?.font = NSFont.systemFont(ofSize: 14.0)
-        switch appDelegate.defaults.string(forKey: "theme") {
+        switch appDelegate.getTheme() {
         case "default":
             titleLabel?.textColor = NSColor.black
         case "dark":

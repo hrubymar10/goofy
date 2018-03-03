@@ -42,15 +42,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     var statusItemConfigurationKey = "showStatusItem"
     var statusItemDefault = true
 
+    var theme = ""
 
+    public func getTheme() -> String {
+        if (theme == "") {
+            if (defaults.string(forKey: "theme") == nil) {
+                defaults.set("default", forKey: "theme")
+                defaults.synchronize()
+            }
+            theme = defaults.string(forKey: "theme")!
+        }
+        return theme
+    }
+    
     // MARK: - NSApplication
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Set Theme
-        if (defaults.string(forKey: "theme") == nil) {
-            defaults.set("default", forKey: "theme")
-            defaults.synchronize()
-        }
         
 		// Init Window
         initWindow(window)
@@ -193,7 +200,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     }
 
     func initWindow(_ window: NSWindow) {
-        switch defaults.string(forKey: "theme") {
+        switch getTheme() {
         case "default":
             window.backgroundColor = NSColor.white
         case "dark":
@@ -213,7 +220,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
             toolbarTrenner.minSize = NSSize(width: 1, height: 100)
             toolbarTrenner.maxSize = NSSize(width: 1, height: 100)
             toolbarTrenner.view?.frame = CGRect(x: 0, y: 0, width: 1, height: 100)
-            switch defaults.string(forKey: "theme") {
+            switch getTheme() {
             case "default":
                 toolbarTrenner.view?.layer?.backgroundColor = NSColor(white: 0.9, alpha: 1.0).cgColor
             case "dark":
@@ -225,7 +232,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
             toolbarSpacing.maxSize = NSSize(width: 157, height: 100)
             toolbarSpacing.view = NSView(frame: CGRect(x: 0, y: 0, width: 157, height: 100))
         } else {
-            switch defaults.string(forKey: "theme") {
+            switch getTheme() {
             case "default":
                 toolbarTrenner.view?.layer?.backgroundColor = NSColor(white: 1.0, alpha: 0.0).cgColor
             case "dark":
@@ -269,10 +276,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
 
         #if DEBUG
             let path = Bundle.main.object(forInfoDictionaryKey: "PROJECT_DIR") as! String
-            let source = (try! String(contentsOfFile: path+"/server/dist/fb-" + defaults.string(forKey: "theme")! + ".js", encoding: String.Encoding.utf8))+"init();"
+            let source = (try! String(contentsOfFile: path+"/server/dist/fb-" + getTheme() + ".js", encoding: String.Encoding.utf8))+"init();"
         #else
             let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-            var jsurl = "https://hrubymar10.github.io/goofy_swift/js/fb" + version + "-" + defaults.string(forKey: "theme")! + ".js"
+            var jsurl = "https://hrubymar10.github.io/goofy_swift/js/fb" + version + "-" + getTheme() + ".js"
             if (Bundle.main.object(forInfoDictionaryKey: "GoofyJavaScriptURL") != nil) {
                 jsurl = Bundle.main.object(forInfoDictionaryKey: "GoofyJavaScriptURL") as! String
             }
@@ -302,7 +309,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     // MARK: - Content Loading
     
     func startLoading() {
-        switch defaults.string(forKey: "theme") {
+        switch getTheme() {
         case "default":
             loadingView?.layer?.backgroundColor = NSColor.white.cgColor
         case "dark":
@@ -331,7 +338,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
 
     @objc func longLoadingMessage() {
         if (loadingView?.isHidden == false) {
-            switch defaults.string(forKey: "theme") {
+            switch getTheme() {
             case "default":
                 longLoading.textColor = NSColor.disabledControlTextColor
             case "dark":

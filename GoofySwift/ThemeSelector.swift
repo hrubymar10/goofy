@@ -23,7 +23,7 @@ class ThemeSelector: NSPanel {
         themesTable.headerView = nil
         themesTable.allowsEmptySelection = false
         themesTable.allowsMultipleSelection = false
-        themeIndex = tableViewData.index(where: {$0["theme"] == appDelegate.defaults.string(forKey: "theme")})!
+        themeIndex = tableViewData.index(where: {$0["theme"] == appDelegate.getTheme()})!
         themesTable.selectRowIndexes(NSIndexSet(index: themeIndex) as IndexSet, byExtendingSelection: false)
         themesTable.action = #selector(selectTheme)
     }
