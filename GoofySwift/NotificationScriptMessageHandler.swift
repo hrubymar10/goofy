@@ -3,7 +3,7 @@
 //  GoofySwift
 //
 //  Created by Daniel Büchele on 11/29/14.
-//  Copyright (c) 2014 Daniel Büchele. All rights reserved.
+//  Copyright (c) 2014-2017 Daniel Büchele, 2018 Martin Hrubý (hrubymar10). All rights reserved.
 //
 
 import Foundation
@@ -67,7 +67,7 @@ class NotificationScriptMessageHandler: NSObject, WKScriptMessageHandler, NSUser
     }
 
 
-    // MARK: - OSX Notifications
+    // MARK: - macOS Notifications
 
     func displayNotification(_ title: NSString, text: NSString, id: NSString, picture: NSImage?) {
         let notification:NSUserNotification = NSUserNotification()

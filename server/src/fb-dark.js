@@ -1,5 +1,3 @@
-var css = '._1ht6,._1htf,html{overflow:hidden}body,button,input,label,select,td,textarea{font-family:system,-apple-system,BlinkMacSystemFont,"Helvetica Neue","Lucida Grande"!important}._4_j4{display:block}._4sp8{min-width:0}._5742{display:none!important}._1enh{max-width:280px;min-width:280px}@media all and (max-width:800px){._1ht5 ._1qt4,.ie10 ._1ht5 ._1qt4,.safari.webkit ._1ht5 ._1qt4{display:-webkit-box}._3rh8{display:block}}@media all and (max-width:640px){._1enh{min-width:74px;max-width:74px}._1ht5 ._1qt4,._3rh8,.ie10 ._1ht5 ._1qt4,.safari.webkit ._1ht5 ._1qt4{display:none}}._4u-c:not(._1wfr){border-right:1px solid rgba(0,0,0,.0980392)}._1q5-{border:none}._1ht6,._1htf{max-width:100%;display:block}._1enh ._36ic,._s15{display:none}._1az,.emoticon{background-image:none!important;width:auto!important;height:auto!important}._4a0v._4a0x{min-width:28px}';
-
 function CONVERSATION_LINK(user_id) {
     return '[data-reactid="' + user_id + '"] a'
 }

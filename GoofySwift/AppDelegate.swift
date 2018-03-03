@@ -3,7 +3,7 @@
 //  GoofySwift
 //
 //  Created by Daniel Büchele on 11/29/14.
-//  Copyright (c) 2014 Daniel Büchele. All rights reserved.
+//  Copyright (c) 2014-2017 Daniel Büchele, 2018 Martin Hrubý (hrubymar10). All rights reserved.
 //
 
 import Cocoa
@@ -29,8 +29,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     @IBOutlet var titleLabel : TitleLabel!
     @IBOutlet var menuHandler : MenuHandler!
     var webView : WKWebView!
-
-
+    
+    let defaults = UserDefaults.standard
+    
     // MARK: Properties
 
     var timer : Timer!
@@ -45,6 +46,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     // MARK: - NSApplication
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Set Theme
+        if (defaults.string(forKey: "theme") == nil) {
+            defaults.set("default", forKey: "theme")
+            defaults.synchronize()
+        }
         
 		// Init Window
         initWindow(window)
@@ -187,7 +193,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     }
 
     func initWindow(_ window: NSWindow) {
-        window.backgroundColor = NSColor.white
+        switch defaults.string(forKey: "theme") {
+        case "default":
+            window.backgroundColor = NSColor.white
+        case "dark":
+            window.backgroundColor = NSColor(red:0.10, green:0.15, blue:0.20, alpha:1.0)
+        default:
+            window.backgroundColor = NSColor.white
+        }
         window.minSize = NSSize(width: 380,height: 376)
         window.titlebarAppearsTransparent = true
         window.titleVisibility = .hidden
@@ -200,15 +213,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
             toolbarTrenner.minSize = NSSize(width: 1, height: 100)
             toolbarTrenner.maxSize = NSSize(width: 1, height: 100)
             toolbarTrenner.view?.frame = CGRect(x: 0, y: 0, width: 1, height: 100)
-            toolbarTrenner.view?.layer?.backgroundColor = NSColor(white: 0.9, alpha: 1.0).cgColor
-
-
+            switch defaults.string(forKey: "theme") {
+            case "default":
+                toolbarTrenner.view?.layer?.backgroundColor = NSColor(white: 0.9, alpha: 1.0).cgColor
+            case "dark":
+                toolbarTrenner.view?.layer?.backgroundColor = NSColor(red:0.15, green:0.19, blue:0.24, alpha:1.0).cgColor
+            default:
+                toolbarTrenner.view?.layer?.backgroundColor = NSColor(white: 0.9, alpha: 1.0).cgColor
+            }
             toolbarSpacing.minSize = NSSize(width: 157, height: 100)
             toolbarSpacing.maxSize = NSSize(width: 157, height: 100)
             toolbarSpacing.view = NSView(frame: CGRect(x: 0, y: 0, width: 157, height: 100))
         } else {
-            toolbarTrenner.view?.layer?.backgroundColor = NSColor(white: 1.0, alpha: 0.0).cgColor
-
+            switch defaults.string(forKey: "theme") {
+            case "default":
+                toolbarTrenner.view?.layer?.backgroundColor = NSColor(white: 1.0, alpha: 0.0).cgColor
+            case "dark":
+                toolbarTrenner.view?.layer?.backgroundColor = NSColor(red:0, green:0, blue:0, alpha:0.0).cgColor
+            default:
+                toolbarTrenner.view?.layer?.backgroundColor = NSColor(white: 1.0, alpha: 0.0).cgColor
+            }
             toolbarSpacing.minSize = NSSize(width: 0, height: 100)
             toolbarSpacing.maxSize = NSSize(width: 0, height: 100)
         }
@@ -232,7 +256,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
         for item in toolbar.items {
             let i = item 
             i.view?.isHidden = true
-            i.image = NSImage(named: NSImage.Name(rawValue: "White"))
+            i.image = NSImage(named: NSImage.Name(rawValue: "Blank"))
         }
     }
 
@@ -245,10 +269,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
 
         #if DEBUG
             let path = Bundle.main.object(forInfoDictionaryKey: "PROJECT_DIR") as! String
-            let source = (try! String(contentsOfFile: path+"/server/dist/fb.js", encoding: String.Encoding.utf8))+"init();"
+            let source = (try! String(contentsOfFile: path+"/server/dist/fb-" + defaults.string(forKey: "theme")! + ".js", encoding: String.Encoding.utf8))+"init();"
         #else
             let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-            var jsurl = "https://hrubymar10.github.io/goofy_swift/js/fb" + version + ".js"
+            var jsurl = "https://hrubymar10.github.io/goofy_swift/js/fb" + version + "-" + defaults.string(forKey: "theme")! + ".js"
             if (Bundle.main.object(forInfoDictionaryKey: "GoofyJavaScriptURL") != nil) {
                 jsurl = Bundle.main.object(forInfoDictionaryKey: "GoofyJavaScriptURL") as! String
             }
@@ -256,7 +280,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
                 "getScript('" + jsurl + "', function() {init();});"
         #endif
 
-        let reactivationToggle : Bool? = UserDefaults.standard.object(forKey: "reactivationToggle") as? Bool
+        let reactivationToggle : Bool? = defaults.object(forKey: "reactivationToggle") as? Bool
         if (reactivationToggle != nil && reactivationToggle==true) {
             self.reactivationMenuItem.state = NSControl.StateValue(rawValue: 1)
         }
@@ -278,8 +302,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     // MARK: - Content Loading
     
     func startLoading() {
-        loadingView?.layer?.backgroundColor = NSColor.white.cgColor
-
+        switch defaults.string(forKey: "theme") {
+        case "default":
+            loadingView?.layer?.backgroundColor = NSColor.white.cgColor
+        case "dark":
+            loadingView?.layer?.backgroundColor = NSColor(red:0.10, green:0.15, blue:0.20, alpha:1.0).cgColor
+        default:
+            loadingView?.layer?.backgroundColor = NSColor.white.cgColor
+        }
         loadingView?.isHidden = false
         spinner.startAnimation(self)
         spinner.isHidden = false
@@ -301,6 +331,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
 
     @objc func longLoadingMessage() {
         if (loadingView?.isHidden == false) {
+            switch defaults.string(forKey: "theme") {
+            case "default":
+                longLoading.textColor = NSColor.disabledControlTextColor
+            case "dark":
+                longLoading.textColor = NSColor.white
+            default:
+                longLoading.textColor = NSColor.disabledControlTextColor
+            }
             longLoading.isHidden = false
         }
     }
@@ -369,25 +407,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
     }
 
     func initStatusItem() {
-        if ((UserDefaults.standard.object(forKey: statusItemConfigurationKey)) == nil) {
-            UserDefaults.standard.set(statusItemDefault, forKey: statusItemConfigurationKey)
+        if ((defaults.object(forKey: statusItemConfigurationKey)) == nil) {
+            defaults.set(statusItemDefault, forKey: statusItemConfigurationKey)
         } else {
 			updateStatusItemVisibility()
         }
     }
 
     func toggleStatusItemConfiguration() {
-        print (UserDefaults.standard.bool(forKey: statusItemConfigurationKey) )
-        if (UserDefaults.standard.bool(forKey: statusItemConfigurationKey) == true) {
-            UserDefaults.standard.set(false, forKey: statusItemConfigurationKey)
+        print (defaults.bool(forKey: statusItemConfigurationKey) )
+        if (defaults.bool(forKey: statusItemConfigurationKey) == true) {
+            defaults.set(false, forKey: statusItemConfigurationKey)
         } else {
-            UserDefaults.standard.set(true, forKey: statusItemConfigurationKey)
+            defaults.set(true, forKey: statusItemConfigurationKey)
         }
 
     }
 
     func updateStatusItemVisibility() {
-        if (UserDefaults.standard.bool(forKey: statusItemConfigurationKey) == true) {
+        if (defaults.bool(forKey: statusItemConfigurationKey) == true) {
             addStatusItem()
         } else {
             hideStatusItem()
@@ -412,12 +450,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
 
         if (i.state.rawValue == 0) {
             i.state = NSControl.StateValue.on
-            UserDefaults.standard.set(true, forKey: "reactivationToggle")
+            defaults.set(true, forKey: "reactivationToggle")
         } else {
             i.state = NSControl.StateValue.off
-            UserDefaults.standard.set(false, forKey: "reactivationToggle")
+            defaults.set(false, forKey: "reactivationToggle")
         }
-        UserDefaults.standard.synchronize()
+        defaults.synchronize()
     }
 
 

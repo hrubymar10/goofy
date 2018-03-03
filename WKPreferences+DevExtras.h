@@ -3,7 +3,7 @@
 //  GoofySwift
 //
 //  Created by Daniel Büchele on 05/04/15.
-//  Copyright (c) 2015 Daniel Büchele. All rights reserved.
+//  Copyright (c) 2015-2017 Daniel Büchele, 2018 Martin Hrubý (hrubymar10). All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
