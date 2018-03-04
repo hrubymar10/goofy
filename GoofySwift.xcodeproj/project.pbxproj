@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3327A60D1AD16EA100B71853 /* WKPreferences+DevExtras.m in Resources */ = {isa = PBXBuildFile; fileRef = 3327A60C1AD16EA100B71853 /* WKPreferences+DevExtras.m */; };
 		338FDBB61AD91FAD00164747 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338FDBB51AD91FAD00164747 /* TitleLabel.swift */; };
 		33942F9D1A2AE7F700E6D361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33942F9C1A2AE7F700E6D361 /* AppDelegate.swift */; };
 		33942F9F1A2AE7F700E6D361 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33942F9E1A2AE7F700E6D361 /* Images.xcassets */; };
@@ -35,9 +34,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3327A60A1AD16DF500B71853 /* GoofySwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GoofySwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		3327A60B1AD16E7400B71853 /* WKPreferences+DevExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKPreferences+DevExtras.h"; sourceTree = "<group>"; };
-		3327A60C1AD16EA100B71853 /* WKPreferences+DevExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKPreferences+DevExtras.m"; sourceTree = "<group>"; };
 		338FDBB51AD91FAD00164747 /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		33942F971A2AE7F700E6D361 /* GoofySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoofySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33942F9B1A2AE7F700E6D361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,9 +64,6 @@
 		33942F8E1A2AE7F700E6D361 = {
 			isa = PBXGroup;
 			children = (
-				3327A60B1AD16E7400B71853 /* WKPreferences+DevExtras.h */,
-				3327A60C1AD16EA100B71853 /* WKPreferences+DevExtras.m */,
-				3327A60A1AD16DF500B71853 /* GoofySwift-Bridging-Header.h */,
 				33942FB71A2AE8AA00E6D361 /* WebKit.framework */,
 				33942F991A2AE7F700E6D361 /* GoofySwift */,
 				33942F981A2AE7F700E6D361 /* Products */,
@@ -188,7 +181,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				460340C1204891EF00CF147C /* GoofySwift_pub.pem in Resources */,
-				3327A60D1AD16EA100B71853 /* WKPreferences+DevExtras.m in Resources */,
 				33942F9F1A2AE7F700E6D361 /* Images.xcassets in Resources */,
 				33942FA21A2AE7F700E6D361 /* MainMenu.xib in Resources */,
 			);
@@ -387,7 +379,6 @@
 				PROJECT_DIR = "$(SRCROOT)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "GoofySwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -411,7 +402,6 @@
 				PROJECT_DIR = "$(SRCROOT)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "GoofySwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

@@ -6,7 +6,8 @@
 //  Copyright (c) 2015-2017 Daniel Büchele, 2018 Martin Hrubý (hrubymar10). All rights reserved.
 //
 
-import Foundation
+import Cocoa
+import WebKit
 
 class MenuHandler: NSObject {
 
