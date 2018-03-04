@@ -84,62 +84,6 @@ body, button, input, label, select, td, textarea {
     min-width: 28px;
 }
 
-html body, html ._4sp8 {
-	background: transparent !important;
-}
-
-/* Message placeholder text color */
-html ._kmc ._1p1t {
-	color: #999 !important;
-	-webkit-text-fill-color: #999 !important;
-}
-
-/* Contact list: search input */
-html ._5iwm ._58al {
-	background-color: rgba(246, 247, 249, 0.5) !important;
-}
-
-/* Contact list: person container */
-html ._1qt4 {
-	border-top: solid 1px rgba(0, 0, 0, 0.06);
-}
-
-/* Styles for vibrancy in dark mode */
-html body {
-	background: rgba(0, 0, 0, 0.26) !important;
-}
-
-/* Main container? */
-html ._4sp8 {
-	background: transparent !important;
-}
-
-/* Main content */
-html ._1q5- {
-	background: transparent !important;
-}
-
-/* Message list: header above */
-html ._5742 {
-	background: transparent !important;
-}
-
-/* Contact list: header above */
-html ._36ic {
-	background: transparent !important;
-}
-
-/* Login button */
-html button {
-	background: transparent !important;
-}
-
-/* Contact list: search input */
-html ._5iwm ._58al {
-	background: rgba(255, 255, 255, 0.1) !important;
-}
-
-
 :root {
 	--base: black;
 	--base-ninety: rgba(255, 255, 255, 0.9);
@@ -389,6 +333,11 @@ html ._1htf,
 /* Contact list: (for format) person: message blurb */
 html ._1htf ._4qba {
 	color: var(--base-fourty);
+}
+
+/* contact list: message (unread) */
+html ._1ht3 ._1htf {
+	color: rgba(24, 112, 219, 1);
 }
 
 /* Contact list: timestamp */
