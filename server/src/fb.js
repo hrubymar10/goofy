@@ -43,7 +43,7 @@ var YOU_KEYWORDS = {
 var YOU = YOU_KEYWORDS.hasOwnProperty(LOCALE) ? YOU_KEYWORDS[LOCALE] : YOU_KEYWORDS["default"];
 
 function CONVERSATION_LINK(user_id) {
-    return '[data-reactid="' + user_id + '"] a'
+    return '[id="' + user_id + '"] a'
 }
 
 function ID(id) {
@@ -196,7 +196,7 @@ function gotoConversationAtIndex(index) {
 
 function reactivation(userid) {
     if (userid) {
-        document.querySelector(CONVERSATION_LINK(user_id)).click();
+        document.querySelector(CONVERSATION_LINK(userid)).click();
     } else if (new Date().getTime() < lastNotificationTime + 1000 * 60) {
         document.querySelector(UNREAD_CONVERSATION + ' a').click();
     }
