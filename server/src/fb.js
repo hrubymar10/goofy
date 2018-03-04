@@ -1,4 +1,46 @@
-var css = '._1ht6,._1htf,html{overflow:hidden}body,button,input,label,select,td,textarea{font-family:system,-apple-system,BlinkMacSystemFont,"Helvetica Neue","Lucida Grande"!important}._4_j4{display:block}._4sp8{min-width:0}._5742{display:none!important}._1enh{max-width:280px;min-width:280px}@media all and (max-width:800px){._1ht5 ._1qt4,.ie10 ._1ht5 ._1qt4,.safari.webkit ._1ht5 ._1qt4{display:-webkit-box}._3rh8{display:block}}@media all and (max-width:640px){._1enh{min-width:74px;max-width:74px}._1ht5 ._1qt4,._3rh8,.ie10 ._1ht5 ._1qt4,.safari.webkit ._1ht5 ._1qt4{display:none}}._4u-c:not(._1wfr){border-right:1px solid rgba(0,0,0,.0980392)}._1q5-{border:none}._1ht6,._1htf{max-width:100%;display:block}._1enh ._36ic,._s15{display:none}._1az,.emoticon{background-image:none!important;width:auto!important;height:auto!important}._4a0v._4a0x{min-width:28px}';
+// Facebook selectors
+var SETTINGS_BUTTON = '._30yy._2fug._p',
+    NEW_MESSAGE_BUTTON = '._36ic._5l-3 > a._30yy',
+    INFORMATION_BUTTON = '[data-testid="info_panel_button"]';
+
+var UPLOAD_BUTTON = '._m._4q60._3rzn._6a',
+    UPLOAD_FORM = '._4rv4 form';
+
+var TEXT_BOX = '._5rpu',
+    SEARCH_BOX = '._58al';
+
+var TITLE_BAR = '._5743',
+    LAST_ACTIVE = '._2v6o';
+
+var CURRENT_CONVERSATION_NAME = TITLE_BAR + ' span',
+    CONVERSATION_LIST = '._2xhi ul',
+    SELECTED_CONVERSATION = '._1ht2';
+
+var _MENU_ITEMS = '._54nq._2i-c._558b._2n_z li',
+    SETTINGS_MENU_ITEM = _MENU_ITEMS + ':first-child',
+    LOGOUT_MENU_ITEM = _MENU_ITEMS + ':last-child';
+
+var UNREAD_CONVERSATION = '._1ht3',
+    UNREAD_MESSAGE_NAME = UNREAD_CONVERSATION + ' ._1ht6',
+    UNREAD_MESSAGE_TEXT = UNREAD_CONVERSATION + ' ._1htf',
+    UNREAD_MESSAGE_ROW = UNREAD_CONVERSATION + '._1ht1 div',
+    UNREAD_MESSAGE_PICTURE = '._55lt > .img';
+
+var EMOTICONS = '._1ift',
+    MUTED = '_569x';
+
+var _localeKeyword = Array.prototype.filter.call(document.body.classList, function(e) {
+    return e.startsWith("Locale");
+})[0];
+
+// Resistant if Facebook stops exposing locale as a class
+var LOCALE = _localeKeyword ? _localeKeyword.replace("Locale_", "") : "";
+
+var YOU_KEYWORDS = {
+    "default": "You: ",
+    "tr_TR": "Sen: "
+};
+var YOU = YOU_KEYWORDS.hasOwnProperty(LOCALE) ? YOU_KEYWORDS[LOCALE] : YOU_KEYWORDS["default"];
 
 function CONVERSATION_LINK(user_id) {
     return '[data-reactid="' + user_id + '"] a'
@@ -7,6 +49,63 @@ function CONVERSATION_LINK(user_id) {
 function ID(id) {
     return '[id="' + id + '"]'
 }
+
+var lastNotification,
+    lastNotificationTime,
+    dockCounter = "",
+    ignoreNotification = false;
+
+(function(f, b) {
+    if (!b.__SV) {
+        var a, e, i, g;
+        window.mixpanel = b;
+        b._i = [];
+        b.init = function(a, e, d) {
+            function f(b, h) {
+                var a = h.split(".");
+                2 == a.length && (b = b[a[0]], h = a[1]);
+                b[h] = function() {
+                    b.push([h].concat(Array.prototype.slice.call(arguments, 0)))
+                }
+            }
+            var c = b;
+            "undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel";
+            c.people = c.people || [];
+            c.toString = function(b) {
+                var a = "mixpanel";
+                "mixpanel" !== d && (a += "." + d);
+                b || (a += " (stub)");
+                return a
+            };
+            c.people.toString = function() {
+                return c.toString(1) + ".people (stub)"
+            };
+            i = "disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+            for (g = 0; g < i.length; g++) f(c, i[g]);
+            b._i.push([a, e, d])
+        };
+        b.__SV = 1.2;
+        a = f.createElement("script");
+        a.type = "text/javascript";
+        a.async = !0;
+        a.src = "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+        e = f.getElementsByTagName("script")[0];
+        e.parentNode.insertBefore(a, e)
+    }
+})(document, window.mixpanel || []);
+mixpanel.init("2245181dbc803998dedc5b07d840e672");
+
+csssetup = function() {
+    head = document.head || document.getElementsByTagName('head')[0];
+    style = document.createElement('style');
+    style.type = 'text/css';
+    if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+    } else {
+        style.appendChild(document.createTextNode(css));
+    }
+    head.appendChild(style);
+};
 
 function init() {
     csssetup();
@@ -211,111 +310,50 @@ function getValueForFirstObjectKey(object) {
     return (keys.length > 0) ? object[keys[0]] : null;
 }
 
-// Facebook selectors
-var SETTINGS_BUTTON = '._30yy._2fug._p',
-    NEW_MESSAGE_BUTTON = '._36ic._5l-3 > a._30yy',
-    INFORMATION_BUTTON = '[data-testid="info_panel_button"]';
-
-var UPLOAD_BUTTON = '._m._4q60._3rzn._6a',
-    UPLOAD_FORM = '._4rv4 form';
-
-var TEXT_BOX = '._5rpu',
-    SEARCH_BOX = '._58al';
-
-var TITLE_BAR = '._5743',
-    LAST_ACTIVE = '._2v6o';
-
-var CURRENT_CONVERSATION_NAME = TITLE_BAR + ' span',
-    CONVERSATION_LIST = '._2xhi ul',
-    SELECTED_CONVERSATION = '._1ht2';
-
-var _MENU_ITEMS = '._54nq._2i-c._558b._2n_z li',
-    SETTINGS_MENU_ITEM = _MENU_ITEMS + ':first-child',
-    LOGOUT_MENU_ITEM = _MENU_ITEMS + ':last-child';
-
-var UNREAD_CONVERSATION = '._1ht3',
-    UNREAD_MESSAGE_NAME = UNREAD_CONVERSATION + ' ._1ht6',
-    UNREAD_MESSAGE_TEXT = UNREAD_CONVERSATION + ' ._1htf',
-    UNREAD_MESSAGE_ROW = UNREAD_CONVERSATION + '._1ht1 div',
-    UNREAD_MESSAGE_PICTURE = '._55lt > .img';
-
-var EMOTICONS = '._1ift',
-    MUTED = '_569x';
-
-var _localeKeyword = Array.prototype.filter.call(document.body.classList, function(e) {
-    return e.startsWith("Locale");
-})[0];
-
-// Resistant if Facebook stops exposing locale as a class
-var LOCALE = _localeKeyword ? _localeKeyword.replace("Locale_", "") : "";
-
-var YOU_KEYWORDS = {
-    "default": "You: ",
-    "tr_TR": "Sen: "
-};
-var YOU = YOU_KEYWORDS.hasOwnProperty(LOCALE) ? YOU_KEYWORDS[LOCALE] : YOU_KEYWORDS["default"];
-
-function CONVERSATION_LINK(user_id) {
-    return '[data-reactid="' + user_id + '"] a'
+// Handle pasted image data forwarded from the wrapper app.
+function pasteImage(base64Data) {
+	var blob = b64toBlob(base64Data, 'image/png'),
+	    uploader = getValueForFirstObjectKey(getValueForFirstObjectKey(__REACT_DEVTOOLS_GLOBAL_HOOK__._renderers).ComponentTree.getClosestInstanceFromNode(document.querySelector(UPLOAD_FORM).parentElement)._renderedChildren);
+	uploader._instance.uploadFiles([blob]);
 }
 
-function ID(id) {
-    return '[id="' + id + '"]'
+// Convert base64 encoded data to a Blob.
+function b64toBlob(b64Data, contentType, sliceSize) {
+	contentType = contentType || '';
+	sliceSize = sliceSize || 512;
+
+	var byteCharacters = atob(b64Data),
+	    byteArrays = [];
+
+	for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+		var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+		var byteNumbers = new Array(slice.length);
+		for (var i = 0; i < slice.length; i++) {
+			byteNumbers[i] = slice.charCodeAt(i);
+		}
+
+		var byteArray = new Uint8Array(byteNumbers);
+
+		byteArrays.push(byteArray);
+	}
+
+	var blob = new Blob(byteArrays, {type: contentType});
+	return blob;
 }
 
-var lastNotification,
-    lastNotificationTime,
-    dockCounter = "",
-    ignoreNotification = false;
+function __triggerKeyboardEvent(el, keyCode, meta) {
+	var eventObj = document.createEventObject ?
+		document.createEventObject() : document.createEvent("Events");
 
-(function(f, b) {
-    if (!b.__SV) {
-        var a, e, i, g;
-        window.mixpanel = b;
-        b._i = [];
-        b.init = function(a, e, d) {
-            function f(b, h) {
-                var a = h.split(".");
-                2 == a.length && (b = b[a[0]], h = a[1]);
-                b[h] = function() {
-                    b.push([h].concat(Array.prototype.slice.call(arguments, 0)))
-                }
-            }
-            var c = b;
-            "undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel";
-            c.people = c.people || [];
-            c.toString = function(b) {
-                var a = "mixpanel";
-                "mixpanel" !== d && (a += "." + d);
-                b || (a += " (stub)");
-                return a
-            };
-            c.people.toString = function() {
-                return c.toString(1) + ".people (stub)"
-            };
-            i = "disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
-            for (g = 0; g < i.length; g++) f(c, i[g]);
-            b._i.push([a, e, d])
-        };
-        b.__SV = 1.2;
-        a = f.createElement("script");
-        a.type = "text/javascript";
-        a.async = !0;
-        a.src = "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
-        e = f.getElementsByTagName("script")[0];
-        e.parentNode.insertBefore(a, e)
-    }
-})(document, window.mixpanel || []);
-mixpanel.init("2245181dbc803998dedc5b07d840e672");
+	if (eventObj.initEvent) {
+		eventObj.initEvent("keydown", true, true);
+	}
 
-csssetup = function() {
-    head = document.head || document.getElementsByTagName('head')[0];
-    style = document.createElement('style');
-    style.type = 'text/css';
-    if (style.styleSheet) {
-        style.styleSheet.cssText = css;
-    } else {
-        style.appendChild(document.createTextNode(css));
-    }
-    head.appendChild(style);
-};
+	eventObj.keyCode = eventObj.which = keyCode;
+	if (meta) {
+		eventObj.metaKey = true;
+	}
+
+	el.dispatchEvent ? el.dispatchEvent(eventObj) : el.fireEvent("onkeydown", eventObj);
+}
