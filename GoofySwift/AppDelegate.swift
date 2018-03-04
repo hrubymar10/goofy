@@ -314,6 +314,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDe
             loadingView?.layer?.backgroundColor = NSColor.white.cgColor
         case "dark":
             loadingView?.layer?.backgroundColor = NSColor(red:0.10, green:0.15, blue:0.20, alpha:1.0).cgColor
+            self.spinner.contentFilters = [CIFilter(name: "CIColorControls", withInputParameters: ["inputBrightness": 1])!]
         default:
             loadingView?.layer?.backgroundColor = NSColor.white.cgColor
         }
