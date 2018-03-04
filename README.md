@@ -1,4 +1,4 @@
-# Goofy Swift [![Build Status](https://travis-ci.org/hrubymar10/goofy_swift.svg?branch=Dark-Mode)](https://travis-ci.org/hrubymar10/goofy_swift)
+# Goofy Swift [![Build Status](https://travis-ci.org/hrubymar10/goofy_swift.svg?branch=master)](https://travis-ci.org/hrubymar10/goofy_swift)
 Goofy Swift is a macOS client for Facebook Messenger. But unlike most other clients, it does not use any of Facebook's APIs, but is basically a single-site browser that injects a little CSS and JS into [`messenger.com`](https://www.messenger.com/) to make it a little more app-like. This repo is swift fork of original https://github.com/danielbuechele/goofy repo.
 
 ## Feature requests and contributing
