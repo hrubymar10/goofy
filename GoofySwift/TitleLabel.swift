@@ -3,7 +3,7 @@
 //  GoofySwift
 //
 //  Created by Daniel Büchele on 11/04/15.
-//  Copyright (c) 2015 Daniel Büchele. All rights reserved.
+//  Copyright (c) 2015-2017 Daniel Büchele, 2018 Martin Hrubý (hrubymar10). All rights reserved.
 //
 
 import Cocoa
@@ -19,6 +19,7 @@ class TitleLabel: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         
         activeLabel = NSTextField(frame: CGRect(x: 40, y: -18, width: self.view.frame.width, height: 36))
         activeLabel?.stringValue = ""
@@ -28,6 +29,14 @@ class TitleLabel: NSViewController {
         activeLabel?.drawsBackground = false
         activeLabel?.alignment = .center
         activeLabel?.font = NSFont.systemFont(ofSize: 10.0)
+        switch appDelegate.getTheme() {
+        case "default":
+            activeLabel?.textColor = NSColor.gray
+        case "dark":
+            activeLabel?.textColor = NSColor.gray
+        default:
+            activeLabel?.textColor = NSColor.gray
+        }
         self.view.addSubview(activeLabel!)
         
         titleLabel = NSTextField(frame: CGRect(x: 40, y: 0, width: self.view.frame.width, height: 36))
@@ -39,10 +48,15 @@ class TitleLabel: NSViewController {
         titleLabel?.alignment = .center
         titleLabel?.textColor = NSColor.black
         titleLabel?.font = NSFont.systemFont(ofSize: 14.0)
+        switch appDelegate.getTheme() {
+        case "default":
+            titleLabel?.textColor = NSColor.black
+        case "dark":
+            titleLabel?.textColor = NSColor.white
+        default:
+            titleLabel?.textColor = NSColor.black
+        }
         self.view.addSubview(titleLabel!)
-        
-        
-        
     }
 
     

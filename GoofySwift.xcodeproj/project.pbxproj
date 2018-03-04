@@ -18,6 +18,7 @@
 		33B93A6B1AD68BE2003EBDDE /* MenuHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B93A6A1AD68BE2003EBDDE /* MenuHandler.swift */; };
 		33C741E01A2B02840072D81E /* NotificationScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C741DF1A2B02840072D81E /* NotificationScriptMessageHandler.swift */; };
 		460340C1204891EF00CF147C /* GoofySwift_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 460340BF204891C900CF147C /* GoofySwift_pub.pem */; };
+		460340C52049536400CF147C /* ThemeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460340C42049536400CF147C /* ThemeSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +49,7 @@
 		33B93A6A1AD68BE2003EBDDE /* MenuHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
 		33C741DF1A2B02840072D81E /* NotificationScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationScriptMessageHandler.swift; sourceTree = "<group>"; };
 		460340BF204891C900CF147C /* GoofySwift_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoofySwift_pub.pem; sourceTree = "<group>"; };
+		460340C42049536400CF147C /* ThemeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				33C741DF1A2B02840072D81E /* NotificationScriptMessageHandler.swift */,
 				33B93A6A1AD68BE2003EBDDE /* MenuHandler.swift */,
 				338FDBB51AD91FAD00164747 /* TitleLabel.swift */,
+				460340C42049536400CF147C /* ThemeSelector.swift */,
 				33942F9E1A2AE7F700E6D361 /* Images.xcassets */,
 				33942FA01A2AE7F700E6D361 /* MainMenu.xib */,
 				33942F9A1A2AE7F700E6D361 /* Supporting Files */,
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33C741E01A2B02840072D81E /* NotificationScriptMessageHandler.swift in Sources */,
+				460340C52049536400CF147C /* ThemeSelector.swift in Sources */,
 				338FDBB61AD91FAD00164747 /* TitleLabel.swift in Sources */,
 				33B93A6B1AD68BE2003EBDDE /* MenuHandler.swift in Sources */,
 				33942F9D1A2AE7F700E6D361 /* AppDelegate.swift in Sources */,

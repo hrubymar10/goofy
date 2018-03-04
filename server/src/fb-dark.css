@@ -1,0 +1,727 @@
+._1ht6, ._1htf, html {
+    overflow: hidden;
+}
+
+body, button, input, label, select, td, textarea {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande" !important;
+}
+
+/* weird display of input bar above messages, fixes #148*/
+._4_j4 {
+    display: block;
+}
+
+/*  window wrapper */
+._4sp8 {
+    min-width: 0;
+}
+
+/* conversation header */
+._5742 {
+    display: none !important;
+}
+
+/* sidebar */
+._1enh {
+    max-width: 280px;
+    min-width: 280px;
+}
+
+@media all and (max-width: 800px) {
+    ._1ht5 ._1qt4, .ie10 ._1ht5 ._1qt4, .safari.webkit ._1ht5 ._1qt4 {
+        display: -webkit-box;
+    }
+    ._3rh8 {
+        display: block;
+    }
+}
+
+@media all and (max-width: 640px) {
+    ._1enh {
+        min-width: 74px;
+        max-width: 74px;
+    }
+
+    ._3rh8, ._1ht5 ._1qt4, .safari.webkit ._1ht5 ._1qt4, .ie10 ._1ht5 ._1qt4 {
+        display: none;
+    }
+}
+
+._4u-c:not(._1wfr) {
+    border-right: 1px solid rgba(0, 0, 0, 0.0980392);
+}
+
+._1q5- {
+    border: none;
+}
+
+/* fixing sidebar text-overflow for resized sidebar */
+._1htf, ._1ht6 {
+    max-width: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+/* sidebar header */
+._1enh ._36ic {
+    display: none;
+}
+
+/* replace emojis */
+.emoticon, ._1az {
+    background-image: none !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+/* "Get the app"-banner */
+._s15 {
+    display: none;
+}
+
+/* fixing typing indicator width */
+._4a0v._4a0x {
+    min-width: 28px;
+}
+
+:root {
+	--base: black;
+	--base-ninety: rgba(255, 255, 255, 0.9);
+	--base-seventy-five: rgba(255, 255, 255, 0.75);
+	--base-seventy: rgba(255, 255, 255, 0.7);
+	--base-fifty: rgba(255, 255, 255, 0.5);
+	--base-fourty: rgba(255, 255, 255, 0.4);
+	--base-thiry: rgba(255, 255, 255, 0.3);
+	--base-twenty: rgba(255, 255, 255, 0.2);
+	--base-five: rgba(255, 255, 255, 0.05);
+	--base-ten: rgba(255, 255, 255, 0.1);
+	--base-nine: rgba(255, 255, 255, 0.09);
+	--container-color: #192633;
+	--conversation-bg: rgb(25, 38, 51);
+	--list-header-color: #202C3A;
+	--blue: #0084ff;
+}
+
+html body {
+	color: var(--base-seventy);
+	background: var(--container-color) !important;
+}
+
+/* Main container? */
+html ._4sp8 {
+	background: var(--container-color) !important;
+}
+
+/* Main content */
+html ._1q5- {
+	background: var(--container-color) !important;
+	border-left: 1px solid var(--base-five) !important;
+}
+
+/* Message list: your message bubble */
+html ._o46:not(._nd_) ._hh7 {
+	background: var(--base-ten);
+	color: var(--base-seventy);
+}
+
+/* Message list: remove background if emoji */
+html ._hh7._2f5r {
+	background: none !important;
+}
+
+/* Message list: remove border from messages */
+._hh7._aol {
+	border-color: transparent !important;
+}
+
+/* Fix dark mode overriding colors for code snippets */
+html ._wu0 {
+	color: var(--base);
+}
+
+/* message list: link in your message bubble */
+html ._o46:not(._nd_) ._hh7 a {
+	color: var(--base-seventy);
+}
+
+/* Message list: link in message bubble */
+html ._hh7 a:hover {
+	background: transparent !important;
+}
+
+/* Message list: link in incoming message bubble */
+html ._o46._nd_ ._hh7 {
+	color: var(--base-ninety);
+}
+
+/* Message list: link preview */
+html ._5i_d {
+	border: solid 1px var(--base-five);
+}
+
+/* Message list: link preview text */
+html ._5i_d .__6k,
+html ._5i_d .__6l {
+	color: var(--base-seventy);
+}
+
+html ._5i_d .__6m {
+	color: var(--base-fourty);
+}
+
+/* Message list: input bar */
+html ._4rv3 {
+	background: transparent !important;
+	border-top: solid 1px var(--base-five);
+	color: var(--base-seventy);
+}
+
+/* Message list: input bar on block */
+html ._2wy4 {
+	color: var(--base-twenty);
+}
+
+/* Message list: timestamp */
+html ._497p {
+	color: var(--base-fourty);
+}
+
+/* Message list: header above */
+html ._5742 {
+	background: var(--list-header-color) !important;
+	border-bottom: none;
+}
+
+/* Message list: header above (event) */
+html ._3nta {
+	background: var(--container-color) !important;
+	border-bottom: 1px solid var(--base-five);
+}
+
+/* Message list: header above (event) */
+html ._2n3t {
+	background-color: var(--conversation-bg);
+}
+
+/* Message list: header above (event) */
+html ._2n3u {
+	color: var(--base-thiry);
+}
+
+/* Message list: header above (event menu small text) */
+html ._4x7m {
+	color: var(--base-thiry);
+}
+
+/* Message list: header above (event menu small text) */
+html ._4x79 {
+	color: var(--base-thiry);
+}
+
+/* Message list: header above (event menu small text) */
+html ._4x7b {
+	color: var(--base-thiry);
+}
+
+/* Message list: header above (invitation) */
+html ._2y8z,
+html ._14-7 ._58ah ._58al::-webkit-input-placeholder,
+html ._58-3 {
+	color: var(--base-fourty);
+}
+
+/* Message list: header above (invitation) (typed text) */
+html ._14-7 ._58ah ._58al {
+	color: var(--base-seventy);
+}
+
+/* Message list: sender (group chat) */
+html ._ih3 {
+	color: var(--base-fourty);
+}
+
+/* Messages list: user info (is in contacts) */
+html ._36zg-e {
+	color: var(--base-seventy) !important;
+}
+
+/* Messages list: user info */
+html ._1n-e {
+	color: var(--base-fourty);
+}
+
+/* Messages list: event box (event name) */
+html ._618l {
+	color: var(--base-seventy);
+}
+
+/* Messages list: event box (event icon) */
+html ._618m {
+	width: 28px;
+}
+
+/* Messages list: event box (event description) */
+html ._618n {
+	color: var(--base-thiry);
+}
+
+/* Messages list: event box (line) */
+html ._618k div hr {
+	background: var(--container-color) !important;
+	border-top: 1px solid var(--base-five);
+}
+
+/* Messages list: text header above the messages */
+html ._17w2,
+html ._ih3 ._3oh-,
+html ._llq ._3oh- {
+	color: var(--base-seventy);
+}
+
+html ._2v6o {
+	color: var(--base-fourty);
+}
+
+/* Messages list: typing indicator dots */
+html ._5pd7 {
+	background: var(--base-seventy) !important;
+}
+
+/* Contact list: header above */
+html ._36ic {
+	background: var(--list-header-color) !important;
+	border-bottom: none;
+}
+
+/* Contact list: search input */
+html ._5iwm ._58al {
+	background: var(--base-ten) !important;
+	color: var(--base-ninety);
+}
+
+html ._5iwm ._58al::-webkit-input-placeholder {
+	color: var(--base-thirty);
+}
+
+/* Contact list: background */
+html ._1enh {
+	background: transparent !important;
+}
+
+/* Contact list: person */
+html ._1ht1 {
+	background: transparent !important;
+}
+
+/* Contact list: person (selected) */
+html ._1ht1._1ht2 {
+	background: linear-gradient(180deg, #1871DC, #1870DB) !important;
+}
+
+/* Contact list: person container */
+html ._1qt4 {
+	border-top: solid 1px var(--base-five) !important;
+}
+
+/* contact list: person name */
+html ._1ht6 {
+	color: var(--base-seventy);
+}
+
+/* Contact list: message blurb */
+html ._1htf,
+/* Contact list: (for format) person: message blurb */
+html ._1htf ._4qba {
+	color: var(--base-fourty);
+}
+
+/* contact list: message (unread) */
+html ._1ht3 ._1htf {
+	color: rgba(24, 112, 219, 1);
+}
+
+/* Contact list: timestamp */
+html ._1ht7 {
+	color: var(--base-twenty);
+}
+/* Contact list: timestamp (selected) */
+html ._1ht2 ._1ht7 {
+	color: var(--base-fifty);
+}
+/* Contact list: timestamp (unread) */
+html ._1ht3 ._1ht7 {
+	color: rgba(0, 132, 255, 0.7);
+}
+
+/* contact list: search results */
+html ._5t4c,
+html ._5t4c ._5l37 {
+	color: var(--base-seventy) !important;
+}
+
+/* Contact list: search results name */
+html ._3q34,
+html ._364g {
+	color: var(--base-seventy);
+}
+
+/* Contact list: search results subname */
+html ._3q35 {
+	color: var(--base-fourty);
+}
+
+/* Contact list: search result label type */
+html ._3xcx,
+html ._225b {
+	color: var(--base-fourty);
+}
+
+/* Contact list: searching text */
+html ._4g0h {
+	color: var(--base-fourty);
+}
+
+/* Right sidebar */
+html ._4_j5 {
+	background: transparent;
+	border-left: solid 1px var(--base-five);
+}
+
+/* Right sidebar: menus background */
+html ._54ng {
+	background: var(--conversation-bg);
+}
+
+/* Right sidebar: menus text color */
+html ._2i-c ._54nf ._54nh {
+	color: var(--base-seventy);
+}
+
+/* Right sidebar: menus selected text color */
+html ._2i-c ._54nf .selected ._54nh {
+	color: rgb(255, 255, 255);
+}
+
+/* Right sidebar: headings */
+html ._1lj0 {
+	color: var(--base-fourty);
+}
+
+/* Right sidebar: section spacer */
+html ._1li- {
+	border-top: solid 1px var(--base-five);
+}
+
+/* Right sidebar: group chat names */
+html ._2jnv,
+html ._5rpu {
+	color: var(--base-seventy);
+}
+
+/* Right sidebar: messenger type info under name */
+html ._3eus {
+	color: var(--base-fourty);
+}
+
+/* Right sidebar: mute notification label */
+html ._3szq {
+	color: var(--base-seventy);
+}
+
+/* Right sidebar: mute notification time */
+html ._3x6v {
+	color: var(--base-fourty);
+}
+
+/* Right sidebar: people list */
+html ._4_j5 ._5l37 {
+	color: var(--base-fourty);
+	background: transparent;
+}
+
+/* Right sidebar: people list (add people) */
+html ._4rph ._4rpj {
+	border-top: solid 1px var(--base-ten) !important;
+}
+
+/* Invite friends popup */
+html ._4jgu {
+	background-color: var(--conversation-bg);
+}
+
+html ._5rh4 {
+	color: var(--base-seventy);
+}
+
+/* Right sidebar: people list item (name) */
+html ._364g,
+html ._3x6u,
+html ._4rph ._4rpj {
+	color: var(--base-seventy);
+}
+
+/* Photos info color */
+html ._2zn2 {
+	color: var(--base-seventy);
+}
+
+html ._2zn6 {
+	color: var(--base-fourty);
+}
+
+/* New conversation contact list: popup */
+html ._2y8_ {
+	background: transparent;
+	border: solid 1px var(--base-five);
+}
+
+/* New conversation contact list: popup hr */
+html ._5l38 {
+	border-top: 1px solid var(--base-ten);
+}
+
+/* New conversation contact list: popup hover */
+html ._1k1p ._5l38 {
+	border-top: none;
+}
+html ._5l37:active,
+html ._1k1p {
+	background-color: var(--base-five) !important;
+}
+
+/* Conversation search */
+html ._33p7 {
+	background-color: var(--conversation-bg);
+}
+html ._33p7 ._b-u,
+html ._33p7 ._b-v {
+	background-color: transparent !important;
+	background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yG/r/CV3cVGSAcf3.png) !important;
+	background-repeat: no-repeat !important;
+	background-size: auto !important;
+}
+html ._33p7 ._b-u {
+	background-position: 0 -42px !important;
+}
+html ._33p7 ._b-v {
+	background-position: 0 0 !important;
+}
+html ._33p7 input {
+	color: var(--base-seventy);
+	background-color: var(--base-five);
+}
+html ._33p7 ._5iwn ._58ak::before {
+	-webkit-filter: invert();
+	filter: invert();
+}
+
+/* Poll */
+/* Border */
+html ._3b4t {
+	border-color: var(--base-nine);
+}
+/* "Poll" header text */
+html ._4qba {
+	color: var(--base-seventy);
+}
+/* Voting options text */
+html ._1mr_,
+html ._1mq_ ._1mq- {
+	color: var(--base-fourty);
+}
+/* Check box colors */
+html ._2m5p[aria-checked="false"][role="checkbox"] {
+	border: 1px solid var(--base-ten);
+}
+/* New option text box */
+html ._58al {
+	color: white;
+}
+/* Poll results bar graph colors */
+html ._3b4h {
+	background-color: var(--base-nine);
+}
+/* Poll results profile pictures */
+html ._4mnq {
+	border-color: var(--container-color);
+}
+html ._34n6 {
+	color: var(--base-fourty);
+	background-color: var(--base-nine);
+}
+
+/* Message reaction buttons */
+html ._aou,
+html ._4kf5 {
+	background-color: var(--conversation-bg);
+}
+
+/* Message action buttons */
+html ._3erg ._hh7 a._2q1l,
+html ._2f5n {
+	background-color: var(--container-color);
+}
+
+/* Bot quick-reply buttons */
+html ._3u69 {
+	background: var(--container-color) !important;
+}
+
+/* Bot quick-reply button border */
+html ._36wf {
+    border: 1px solid var(--base-five) !important;
+}
+
+/* Bot card title */
+html ._3cn0 {
+	color: var(--base-seventy);
+}
+
+/* Bot card content */
+html ._3cnl, ._3cnn a, ._3cnj {
+	color: var(--base-fourty);
+}
+
+/* Dialogs */
+html ._53ij,
+html ._4eby,
+html ._2c9g {
+	background: var(--container-color) !important;
+}
+
+/* Dialog: title and names */
+html ._374c,
+html ._4ebz,
+html ._2c9i ._19jt,
+html .uiInputLabelLabel {
+	color: var(--base-seventy) !important;
+}
+
+/* Send cash dialog background */
+html ._49no,
+html ._2z8r {
+	background-color: transparent !important;
+}
+
+/* Send cash dialog disabled */
+html ._3org {
+	background-color: var(--base-twenty) !important;
+}
+
+/* Send cash dialog primary text */
+html ._39r6 {
+	color: var(--base-seventy) !important;
+}
+
+/* Send cash dialog secondary text */
+html ._39r7 {
+	color: var(--base-fourty) !important;
+}
+
+/* Gif and sticker dialog: hide white triangle */
+html ._53io {
+	visibility: hidden;
+}
+
+/* Gif and sticker dialog: style the bottom of the list */
+html .uiScrollableArea.contentAfter:after {
+	background: linear-gradient(rgba(25, 38, 51, .05), var(--container-color));
+}
+
+/* Sticker dialog: selected header */
+html ._5r8a._5r8b,
+html ._eb3:before {
+	background-color: var(--base-five);
+}
+
+/* Sticker dialog: header borders */
+html ._5r8e,
+html ._5r86 {
+	border-color: var(--base-five);
+}
+
+/* Record dialog: time */
+html ._3z53 {
+	color: var(--base-seventy);
+}
+
+/* Delete popover */
+html ._hw2 ._53ij {
+	background-color: var(--base-seventy) !important;
+}
+
+/* Login tile and names */
+html ._5hy4,
+html ._3403 {
+	color: var(--base-fourty) !important;
+}
+
+/* Login inputs */
+html ._55r1._5f0v._43di {
+	background: var(--base-ten) !important;
+	color: var(--base-seventy-five);
+}
+
+/* Login button */
+html button {
+	background: var(--container-color) !important;
+}
+
+/* Fix the Sticker and Gaming buttons */
+html ._4rv6,
+html ._4ce_ {
+	filter: invert() !important;
+	opacity: 0.6 !important;
+}
+
+/* Fix the @name-popover in the chat input box */
+html ._13iv {
+	background: var(--container-color) !important;
+}
+
+/* Gaming popover */
+/* Gaming popover header text */
+html ._4lh7 {
+	color: var(--base-seventy);
+}
+
+/* Gaming popover header */
+html ._53ij ._3rh0 {
+	background: var(--list-header-color) !important;
+}
+
+/* Gaming popover content */
+html ._53ij ._4lh2 {
+	background: var(--container-color) !important;
+}
+
+/* Gaming popover "PLAY" text color */
+html ._30vt ._4qba {
+	color: var(--blue);
+}
+
+/* Tomorrow dark theme for code blocks */
+html ._wu0 {
+	--code-block-base: #c5c8c6;
+	--code-block-background: #1d1f21;
+	--code-block-border: #0a0c14;
+}
+
+/* Plan dialog primary text */
+html ._4dx5,
+html ._38wl {
+	color: var(--base-seventy) !important;
+}
+
+/* Plan dialog input fields */
+html ._2mes._3smo ._3smp,
+html ._5pw9,
+html ._5pw6{
+	background-color: transparent !important;
+	color: var(--base-fourty) !important;
+}
+
+/* Plan dialog time selector active highlight */
+html ._5pw1 {
+    background: var(--base-nine);
+}
