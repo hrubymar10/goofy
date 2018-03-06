@@ -304,7 +304,8 @@ html ._5iwm ._58al::-webkit-input-placeholder {
 }
 
 /* Message seen by counter */
-html ._jf3 {
+html ._jf4 ._jf3 {
+	background-color: rgba(0, 0, 0, .1);
 	color: var(--base-seventy);
 }
 
