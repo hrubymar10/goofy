@@ -303,6 +303,11 @@ html ._5iwm ._58al::-webkit-input-placeholder {
 	color: var(--base-thirty);
 }
 
+/* Message seen by counter */
+html ._jf3 {
+	color: var(--base-seventy);
+}
+
 /* Contact list: background */
 html ._1enh {
 	background: transparent !important;
@@ -392,11 +397,6 @@ html ._54ng {
 	background: var(--conversation-bg);
 }
 
-/* Right sidebar: menus text color */
-html ._2i-c ._54nf ._54nh {
-	color: var(--base-seventy);
-}
-
 /* Right sidebar: menus selected text color */
 html ._2i-c ._54nf .selected ._54nh {
 	color: rgb(255, 255, 255);
@@ -442,6 +442,16 @@ html ._4_j5 ._5l37 {
 /* Right sidebar: people list (add people) */
 html ._4rph ._4rpj {
 	border-top: solid 1px var(--base-ten) !important;
+}
+
+/* Right sidebar: emoji select popup corners */
+html ._59s7 {
+	background-color: rgba(0,0,0,0);
+}
+
+/* Right sidebar: emoji select popup selected category background */
+html ._1uwz {
+	background: #111a23;
 }
 
 /* Invite friends popup */
@@ -626,6 +636,11 @@ html ._53io {
 /* Gif and sticker dialog: style the bottom of the list */
 html .uiScrollableArea.contentAfter:after {
 	background: linear-gradient(rgba(25, 38, 51, .05), var(--container-color));
+}
+
+/* Gif and sticker dialog: text */
+html ._2f5n ._29ey {
+	color: var(--base-seventy);
 }
 
 /* Sticker dialog: selected header */
