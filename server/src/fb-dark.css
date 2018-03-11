@@ -17,7 +17,8 @@ body, button, input, label, select, td, textarea {
 }
 
 /* conversation header */
-._5742 {
+._5742,
+._673w {
     display: none !important;
 }
 
@@ -63,7 +64,8 @@ body, button, input, label, select, td, textarea {
 }
 
 /* sidebar header */
-._1enh ._36ic {
+._1enh ._36ic,
+._3lz9 {
     display: none;
 }
 
